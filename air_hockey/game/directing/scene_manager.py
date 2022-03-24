@@ -1,5 +1,6 @@
 import csv
 from constants import *
+from game.casting.actor import Actor 
 from game.casting.animation import Animation
 from game.casting.surface import Surface
 from game.casting.puck import Puck
@@ -86,6 +87,7 @@ class SceneManager:
         self._add_puck(cast)
         self._add_striker(cast)
         self._add_dialog(cast, ENTER_TO_START)
+        
 
         self._add_initialize_script(script)
         self._add_load_script(script)

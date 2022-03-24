@@ -1,6 +1,7 @@
 from constants import *
 from game.scripting.action import Action
-
+from game.casting.image import Image
+from game.casting.point import Point
 
 class DrawPuckAction(Action):
 
@@ -18,3 +19,4 @@ class DrawPuckAction(Action):
         image = puck.get_image()
         position = body.get_position()
         self._video_service.draw_image(image, position)
+        self._video_service.draw_image(Image("air_hockey/assets/images/one.png"), Point(10,350))
