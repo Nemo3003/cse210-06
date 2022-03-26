@@ -17,12 +17,23 @@ class CollideBordersAction(Action):
         y = position.get_y()
         slide_hit = Sound(SLIDE_HIT)
         goal = Sound(GOAL)
-                
+        #TODO: Check if puck is in the border
+        if puck == SCREEN_HEIGHT:
+            self._audio_service.play_sound(slide_hit)
+            body.set_position(x, FIELD_TOP)
+            body.set_velocity(0, 0)
+
+        if puck == SCREEN_WIDTH:
+            self._audio_service.play_sound(slide_hit)
+            body.set_position(FIELD_RIGHT, y)
+            body.set_velocity(0, 0)
+
+
         if x < FIELD_LEFT:
             puck.bounce_x()
             self._audio_service.play_sound(slide_hit)
 
-        elif x >= (FIELD_RIGHT - PUCK_WIDTH):
+        if x >= (FIELD_RIGHT - PUCK_WIDTH):
             puck.bounce_x()
             self._audio_service.play_sound(slide_hit)
 
@@ -30,6 +41,6 @@ class CollideBordersAction(Action):
             puck.bounce_y()
             self._audio_service.play_sound(slide_hit)
 
-        elif y >= (FIELD_BOTTOM - PUCK_WIDTH):
+        if y >= (FIELD_BOTTOM - PUCK_WIDTH):
             callback.on_next(GAME_OVER)
             self._audio_service.play_sound(goal)
