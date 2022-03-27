@@ -15,8 +15,9 @@ class DrawHudAction(Action):
         self._video_service.draw_image(Image("air_hockey/assets/images/one.png"), Point(100,50))
 
     def _draw_label(self, cast, group, format_str, data):
-        label = cast.get_first_actor(group)
-        text = label.get_text()
-        text.set_value(format_str.format(data))
-        position = label.get_position()
-        self._video_service.draw_text(text, position)
+        labels = cast.get_actors(group)
+        for label in labels:
+            text = label.get_text()
+            text.set_value(format_str.format(data))
+            position = label.get_position()
+            self._video_service.draw_text(text, position)
