@@ -1,7 +1,7 @@
 # cse210-06
 # Air-hockey
 
-Simple pygame implementation of 2 player Air Hockey game. It has score updation and basic air hockey features.
+A 2 player Air Hockey game. It has score updation and basic air hockey features.
 
 ## Requirements
 
