@@ -1,7 +1,9 @@
 from constants import *
 from game.casting.sound import Sound
 from game.scripting.action import Action
-
+"""
+This module handles the events in which the puck hits the borders
+"""
 
 class CollideBordersAction(Action):
 
