@@ -20,17 +20,19 @@ class CollideGoalAction(Action):
         goal_b_body = goal_b.get_body()
 
         if self._physics_service.has_collided(ball_body, goal_a_body):
-            ball.bounce_y()
+            #ball.bounce_y()
             # ADD GOAL SOUND
-            #sound = Sound(BOUNCE_SOUND)
-            #self._audio_service.play_sound(sound)
+            goal = Sound(GOAL)
+            self._audio_service.play_sound(goal)
             #points = goal_a.get_points()
-            stat_a.add_points(1)
+            stat_b.add_points(1)
+            print("POINTS POINTS POINTS POINTS POINTS")
 
         if self._physics_service.has_collided(ball_body, goal_b_body):
-            ball.bounce_y()
+            #ball.bounce_y()
             # ADD GOAL SOUND
-            #sound = Sound(BOUNCE_SOUND)
-            #self._audio_service.play_sound(sound)
+            goal = Sound(GOAL)
+            self._audio_service.play_sound(goal)
             #points = goal_b.get_points()
-            stat_b.add_points(1)
+            stat_a.add_points(1)
+            print("POINTS POINTS POINTS POINTS POINTS")

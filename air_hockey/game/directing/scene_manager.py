@@ -177,13 +177,15 @@ class SceneManager:
 
     def _add_score_a(self, cast):
         cast.clear_actors(SCORE_GROUP)
-        text = Text(("Player 1 {SCORE_FORMAT}"), FONT_FILE, FONT_SMALL, ALIGN_CENTER)
+        score_display = PLAYER_A.format(SCORE_FORMAT)
+        text = Text(score_display, FONT_FILE, FONT_SMALL, ALIGN_CENTER)
         position = Point(CENTER_X-300, HUD_MARGIN)
         label = Label(text, position)
         cast.add_actor(SCORE_GROUP, label)
     
     def _add_score_b(self, cast):
-        text = Text(("Player 2 {SCORE_FORMAT}"), FONT_FILE, FONT_SMALL, ALIGN_CENTER)
+        score_display = PLAYER_B.format(SCORE_FORMAT)
+        text = Text(score_display, FONT_FILE, FONT_SMALL, ALIGN_CENTER)
         position = Point(CENTER_X+300, HUD_MARGIN)
         label = Label(text, position)
         cast.add_actor(SCORE_GROUP, label)
