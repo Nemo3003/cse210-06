@@ -1,6 +1,9 @@
 import time
 from game.scripting.action import Action
 
+"""
+    A timer is over here! :) So you know how long have you been playing
+"""
 
 class TimedChangeSceneAction(Action):
 
