@@ -14,17 +14,21 @@ from game.scripting.change_scene_action import ChangeSceneAction
 from game.scripting.check_over_action import CheckOverAction
 from game.scripting.collide_borders_action import CollideBordersAction
 from game.scripting.collide_striker_action import CollideStrikerAction
+from game.scripting.collide_striker_action import CollideStrikerAction2
 from game.scripting.control_striker_action import ControlStrikerAction
+from game.scripting.control_striker_action import ControlStrikerAction2
 from game.scripting.draw_surface import DrawSurface
 from game.scripting.draw_puck_action import DrawPuckAction
 from game.scripting.draw_dialog_action import DrawDialogAction
 from game.scripting.draw_hud_action import DrawHudAction
 from game.scripting.draw_striker_action import DrawStrikerAction
+from game.scripting.draw_striker_action import DrawStrikerAction2
 from game.scripting.end_drawing_action import EndDrawingAction
 from game.scripting.initialize_devices_action import InitializeDevicesAction
 from game.scripting.load_assets_action import LoadAssetsAction
 from game.scripting.move_puck_action import MovePuckAction
 from game.scripting.move_striker_action import MoveStrikerAction
+from game.scripting.move_striker_action import MoveStrikerAction2
 from game.scripting.play_sound_action import PlaySoundAction
 from game.scripting.release_devices_action import ReleaseDevicesAction
 from game.scripting.start_drawing_action import StartDrawingAction
@@ -47,17 +51,21 @@ class SceneManager:
     CHECK_OVER_ACTION = CheckOverAction()
     COLLIDE_BORDERS_ACTION = CollideBordersAction(PHYSICS_SERVICE, AUDIO_SERVICE)
     COLLIDE_STRIKER_ACTION = CollideStrikerAction(PHYSICS_SERVICE, AUDIO_SERVICE)
+    COLLIDE_STRIKER_ACTION2 = CollideStrikerAction2(PHYSICS_SERVICE, AUDIO_SERVICE)
     CONTROL_STRIKER_ACTION = ControlStrikerAction(KEYBOARD_SERVICE)
+    CONTROL_STRIKER_ACTION2 = ControlStrikerAction2(KEYBOARD_SERVICE)
     DRAW_SURFACE = DrawSurface(VIDEO_SERVICE)
     DRAW_PUCK_ACTION = DrawPuckAction(VIDEO_SERVICE)
     DRAW_DIALOG_ACTION = DrawDialogAction(VIDEO_SERVICE)
     DRAW_HUD_ACTION = DrawHudAction(VIDEO_SERVICE)
     DRAW_STRIKER_ACTION= DrawStrikerAction(VIDEO_SERVICE)
+    DRAW_STRIKER_ACTION2= DrawStrikerAction2(VIDEO_SERVICE)
     END_DRAWING_ACTION = EndDrawingAction(VIDEO_SERVICE)
     INITIALIZE_DEVICES_ACTION = InitializeDevicesAction(AUDIO_SERVICE, VIDEO_SERVICE)
     LOAD_ASSETS_ACTION = LoadAssetsAction(AUDIO_SERVICE, VIDEO_SERVICE)
     MOVE_PUCK_ACTION = MovePuckAction()
     MOVE_STRIKER_ACTION = MoveStrikerAction()
+    MOVE_STRIKER_ACTION2 = MoveStrikerAction2()
     RELEASE_DEVICES_ACTION = ReleaseDevicesAction(AUDIO_SERVICE, VIDEO_SERVICE)
     START_DRAWING_ACTION = StartDrawingAction(VIDEO_SERVICE)
     UNLOAD_ASSETS_ACTION = UnloadAssetsAction(AUDIO_SERVICE, VIDEO_SERVICE)
@@ -85,6 +93,7 @@ class SceneManager:
         self._add_surface(cast)
         self._add_puck(cast)
         self._add_striker(cast)
+        self._add_striker2(cast)
         self._add_dialog(cast, ENTER_TO_START)
 
         self._add_initialize_script(script)
@@ -99,6 +108,7 @@ class SceneManager:
         self._add_surface(cast)
         self._add_puck(cast)
         self._add_striker(cast)
+        self._add_striker2(cast)
         self._add_dialog(cast, FACEOFF)
 
         script.clear_actions(INPUT)
@@ -113,6 +123,7 @@ class SceneManager:
 
         script.clear_actions(INPUT)
         script.add_action(INPUT, self.CONTROL_STRIKER_ACTION)
+        script.add_action(INPUT, self.CONTROL_STRIKER_ACTION2)
         self._add_update_script(script)
         self._add_output_script(script)
 
@@ -120,6 +131,7 @@ class SceneManager:
         self._add_surface(cast)
         self._add_puck(cast)
         self._add_striker(cast)
+        self._add_striker2(cast)
         self._add_dialog(cast, WAS_GOOD_GAME)
 
         script.clear_actions(INPUT)
@@ -183,8 +195,8 @@ class SceneManager:
 
     def _add_striker(self, cast):
         cast.clear_actors(STRIKER_GROUP)
-        x = CENTER_X - 100
-        y = 500
+        x = CENTER_X - 490
+        y = (SCREEN_HEIGHT / 2) - 25
         position = Point(x, y)
         size = Point(STRIKER_WIDTH, STRIKER_HEIGHT)
         velocity = Point(0, 0)
@@ -192,6 +204,18 @@ class SceneManager:
         image = Image(STRIKER_IMAGES)
         striker = Striker(body, image, True)
         cast.add_actor(STRIKER_GROUP, striker)
+
+    def _add_striker2(self, cast):
+        cast.clear_actors(STRIKER_GROUP2)
+        x = CENTER_X + 390
+        y = (SCREEN_HEIGHT / 2) - 25
+        position = Point(x, y)
+        size = Point(STRIKER_WIDTH, STRIKER_HEIGHT)
+        velocity = Point(0, 0)
+        body = Body(position, size, velocity)
+        image = Image(STRIKER_IMAGES)
+        striker2 = Striker(body, image, True)
+        cast.add_actor(STRIKER_GROUP2, striker2)
 
     # ----------------------------------------------------------------------------------------------
     # scripting methods
@@ -211,6 +235,7 @@ class SceneManager:
         script.add_action(OUTPUT, self.DRAW_SURFACE)
         script.add_action(OUTPUT, self.DRAW_PUCK_ACTION)
         script.add_action(OUTPUT, self.DRAW_STRIKER_ACTION)
+        script.add_action(OUTPUT, self.DRAW_STRIKER_ACTION2)
         script.add_action(OUTPUT, self.DRAW_DIALOG_ACTION)
         script.add_action(OUTPUT, self.END_DRAWING_ACTION)
 
@@ -226,7 +251,10 @@ class SceneManager:
         script.clear_actions(UPDATE)
         script.add_action(UPDATE, self.MOVE_PUCK_ACTION)
         script.add_action(UPDATE, self.MOVE_STRIKER_ACTION)
+        script.add_action(UPDATE, self.MOVE_STRIKER_ACTION2)
         script.add_action(UPDATE, self.COLLIDE_BORDERS_ACTION)
         script.add_action(UPDATE, self.COLLIDE_STRIKER_ACTION)
+        script.add_action(UPDATE, self.COLLIDE_STRIKER_ACTION2)
         script.add_action(UPDATE, self.MOVE_STRIKER_ACTION)
+        script.add_action(UPDATE, self.MOVE_STRIKER_ACTION2)
         script.add_action(UPDATE, self.CHECK_OVER_ACTION)

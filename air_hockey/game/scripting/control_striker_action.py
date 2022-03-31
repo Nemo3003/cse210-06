@@ -7,6 +7,8 @@ class ControlStrikerAction(Action):
     def __init__(self, keyboard_service):
         self._keyboard_service = keyboard_service
         
+    def execute(self, cast, script, callback):
+
         striker = cast.get_first_actor(STRIKER_GROUP)
         if self._keyboard_service.is_key_down(D) & self._keyboard_service.is_key_down(W): 
             striker.swing_upright()
@@ -27,6 +29,13 @@ class ControlStrikerAction(Action):
         else: 
             striker.stop_moving()   
 
+class ControlStrikerAction2(Action):
+
+    def __init__(self, keyboard_service):
+        self._keyboard_service = keyboard_service
+        
+    def execute(self, cast, script, callback):
+
         striker2 = cast.get_first_actor(STRIKER_GROUP2)
         if self._keyboard_service.is_key_down(RIGHT) & self._keyboard_service.is_key_down(UP): 
             striker2.swing_upright()
@@ -45,4 +54,8 @@ class ControlStrikerAction(Action):
         elif self._keyboard_service.is_key_down(DOWN): 
             striker2.swing_down()  
         else: 
-            striker2.stop_moving()   
+            striker2.stop_moving()
+
+
+
+             
