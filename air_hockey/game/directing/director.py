@@ -4,6 +4,9 @@ from game.directing.scene_manager import SceneManager
 from game.scripting.action_callback import ActionCallback
 from game.scripting.script import Script
 
+"""
+    This module makes it possible to 'direct' the game c: 
+"""
 
 class Director(ActionCallback):
     """A person who directs the game."""
