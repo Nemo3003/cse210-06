@@ -1,5 +1,8 @@
 from game.scripting.action import Action
 
+"""
+    This terminates the assets :( 
+"""
 
 class UnloadAssetsAction(Action):
 
