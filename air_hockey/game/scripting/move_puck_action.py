@@ -1,6 +1,9 @@
 from constants import *
 from game.scripting.action import Action
 
+"""
+    Here we will be modifying more of the movement of the puck
+"""
 
 class MovePuckAction(Action):
 
