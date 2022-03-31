@@ -1,6 +1,9 @@
 from constants import *
 from game.scripting.action import Action
 
+"""
+    This is it! you need to control what the striker is doing? well, this bad boy can do it!
+"""
 
 class DrawStrikerAction(Action):
 
