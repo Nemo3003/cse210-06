@@ -2,6 +2,8 @@ class Sound:
     """A sound that can be heard.
 
     The responsibility of Sound is keep track of the audio asset information.
+    
+    This allows you to add/replace audio files
     """
 
     def __init__(self, filename, volume = 1, repeated = False):
