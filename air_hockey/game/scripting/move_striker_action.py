@@ -19,7 +19,7 @@ class MoveStrikerAction(Action):
         x = position.get_x()
         
         position = position.add(velocity)
-
+#This will allow us to make it to bounce
         if x < 0:
             position = Point(0, position.get_y())
         elif x > (SCREEN_WIDTH - STRIKER_WIDTH):
@@ -27,7 +27,7 @@ class MoveStrikerAction(Action):
             
         body.set_position(position)
 
-
+#Our second striker needs something to do :)
 class MoveStrikerAction2(Action):
 
     def __init__(self):
