@@ -2,6 +2,9 @@ from constants import *
 from game.casting.point import Point
 from game.scripting.action import Action
 
+"""
+    What is the striker going to do? Here you can modify that ;)
+"""
 
 class MoveStrikerAction(Action):
 
