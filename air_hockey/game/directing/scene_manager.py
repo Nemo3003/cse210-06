@@ -32,6 +32,7 @@ from game.scripting.move_striker_action import MoveStrikerAction
 from game.scripting.move_striker_action import MoveStrikerAction2
 from game.scripting.play_sound_action import PlaySoundAction
 from game.scripting.release_devices_action import ReleaseDevicesAction
+from game.scripting.collide_goal_action import CollideGoalAction
 from game.scripting.start_drawing_action import StartDrawingAction
 from game.scripting.timed_change_scene_action import TimedChangeSceneAction
 from game.scripting.unload_assets_action import UnloadAssetsAction
@@ -54,7 +55,9 @@ class SceneManager:
     COLLIDE_STRIKER_ACTION = CollideStrikerAction(PHYSICS_SERVICE, AUDIO_SERVICE)
     COLLIDE_STRIKER_ACTION2 = CollideStrikerAction2(PHYSICS_SERVICE, AUDIO_SERVICE)
     CONTROL_STRIKER_ACTION = ControlStrikerAction(KEYBOARD_SERVICE)
-    CONTROL_STRIKER_ACTION2 = ControlStrikerAction2(KEYBOARD_SERVICE)
+
+    COLLIDE_GOAL_ACTION = CollideGoalAction(PHYSICS_SERVICE,AUDIO_SERVICE)
+
     DRAW_SURFACE = DrawSurface(VIDEO_SERVICE)
     DRAW_PUCK_ACTION = DrawPuckAction(VIDEO_SERVICE)
     DRAW_DIALOG_ACTION = DrawDialogAction(VIDEO_SERVICE)
@@ -89,8 +92,10 @@ class SceneManager:
     # ----------------------------------------------------------------------------------------------
     
     def _prepare_new_game(self, cast, script):
-        self._add_stats(cast)
-        self._add_score(cast)
+        self._add_stat_a(cast)
+        self._add_stat_b(cast)
+        self._add_score_a(cast)
+        self._add_score_b(cast)
         self._add_surface(cast)
         self._add_puck(cast)
         self._add_striker(cast)
@@ -183,15 +188,27 @@ class SceneManager:
         label = Label(text, position)
         cast.add_actor(DIALOG_GROUP, label)
 
-    def _add_score(self, cast):
+    def _add_score_a(self, cast):
         cast.clear_actors(SCORE_GROUP)
-        text = Text(SCORE_FORMAT, FONT_FILE, FONT_SMALL, ALIGN_CENTER)
-        position = Point(CENTER_X, HUD_MARGIN)
+        score_display = PLAYER_A.format(SCORE_FORMAT)
+        text = Text(score_display, FONT_FILE, FONT_SMALL, ALIGN_CENTER)
+        position = Point(CENTER_X-300, HUD_MARGIN)
+        label = Label(text, position)
+        cast.add_actor(SCORE_GROUP, label)
+    
+    def _add_score_b(self, cast):
+        score_display = PLAYER_B.format(SCORE_FORMAT)
+        text = Text(score_display, FONT_FILE, FONT_SMALL, ALIGN_CENTER)
+        position = Point(CENTER_X+300, HUD_MARGIN)
         label = Label(text, position)
         cast.add_actor(SCORE_GROUP, label)
 
-    def _add_stats(self, cast):
+    def _add_stat_a(self, cast):
         cast.clear_actors(STATS_GROUP)
+        stats = Stats()
+        cast.add_actor(STATS_GROUP, stats)
+
+    def _add_stat_b(self, cast):
         stats = Stats()
         cast.add_actor(STATS_GROUP, stats)
 
