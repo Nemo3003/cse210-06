@@ -40,7 +40,9 @@ from game.services.raylib.raylib_audio_service import RaylibAudioService
 from game.services.raylib.raylib_keyboard_service import RaylibKeyboardService
 from game.services.raylib.raylib_physics_service import RaylibPhysicsService
 from game.services.raylib.raylib_video_service import RaylibVideoService
-
+"""
+HEY YOU! yes you, here you can manage the different scenes. Video specifically
+"""
 
 class SceneManager:
     """The person in charge of setting up the cast and script for each scene."""
