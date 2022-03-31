@@ -1,6 +1,9 @@
 from constants import *
 from game.scripting.action import Action
 
+"""
+    The striker must be controlled! so this is why this module exists :)
+"""
 
 class ControlStrikerAction(Action):
 
