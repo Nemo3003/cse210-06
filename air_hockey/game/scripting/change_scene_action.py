@@ -1,6 +1,9 @@
 from constants import *
 from game.scripting.action import Action
 
+"""
+    In order to have a coherent game you need to change scenes constantly...that is what this module is for :)
+"""
 
 class ChangeSceneAction(Action):
 
