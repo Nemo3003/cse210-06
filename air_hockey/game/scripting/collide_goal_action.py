@@ -2,6 +2,9 @@ from constants import *
 from game.casting.sound import Sound
 from game.scripting.action import Action
 
+"""
+    Collisions do not only occur in the borders, but also in the goals :) 
+"""
 
 class CollideGoalAction(Action):
 
