@@ -1,5 +1,8 @@
 from game.scripting.action import Action
 
+"""
+    Everything that begins must finish up. This terminates the audio and video service
+"""
 
 class ReleaseDevicesAction(Action):
 
