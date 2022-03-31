@@ -3,6 +3,10 @@ from game.scripting.action import Action
 from game.casting.image import Image
 from game.casting.point import Point
 
+"""
+    Let us draw the puck's action! 
+"""
+
 class DrawPuckAction(Action):
 
     def __init__(self, video_service):
