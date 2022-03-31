@@ -3,6 +3,9 @@ from game.scripting.action import Action
 from game.casting.image import Image
 from game.casting.point import Point
 
+"""
+    The Hud must have an action controller...right?
+"""
 
 class DrawHudAction(Action):
 
