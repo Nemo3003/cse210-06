@@ -19,4 +19,5 @@ class DrawPuckAction(Action):
         image = puck.get_image()
         position = body.get_position()
         self._video_service.draw_image(image, position)
-        self._video_service.draw_image(Image("air_hockey/assets/images/one.png"), Point(10,350))
+        # for testing
+        # self._video_service.draw_image(Image("air_hockey/assets/images/one.png"), Point(10,350))

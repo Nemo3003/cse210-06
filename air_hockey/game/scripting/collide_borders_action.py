@@ -58,3 +58,4 @@ class CollideBordersAction(Action):
             puck.bounce_y()
             self._audio_service.play_sound(slide_hit)   
 
+# update check
