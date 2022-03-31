@@ -33,18 +33,22 @@ class CollideBordersAction(Action):
         #     body.set_velocity(0, 0)
 
 
-        if x < (FIELD_LEFT + 45):
+
+
+        if x < FIELD_LEFT:
             puck.bounce_x()
             self._audio_service.play_sound(slide_hit)
 
-        if x >= (FIELD_RIGHT - PUCK_WIDTH - 45):
+        if x >= (FIELD_RIGHT - PUCK_WIDTH):
             puck.bounce_x()
             self._audio_service.play_sound(slide_hit)
 
-        if y < (FIELD_TOP + 30):
+        if y < (FIELD_TOP):
             puck.bounce_y()
             self._audio_service.play_sound(slide_hit)
 
-        if y >= (FIELD_BOTTOM - PUCK_WIDTH - 30):
+        if y >= (FIELD_BOTTOM - PUCK_WIDTH):
             callback.on_next(GAME_OVER)
             self._audio_service.play_sound(goal)
+
+            
