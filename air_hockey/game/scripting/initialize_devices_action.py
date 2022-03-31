@@ -1,5 +1,8 @@
 from game.scripting.action import Action
 
+"""
+    Here we initialize the audio and video services
+"""
 
 class InitializeDevicesAction(Action):
 
