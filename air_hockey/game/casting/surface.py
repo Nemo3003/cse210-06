@@ -1,6 +1,7 @@
 from constants import *
 from game.casting.actor import Actor
 
+#TODO: I honestly, have no idea what is this for. Maybe the actor or maybe the puck...
 
 class Surface(Actor):
     """A solid, spherical object that is bounced around in the game."""
