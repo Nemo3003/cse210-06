@@ -33,7 +33,7 @@ class CollideBordersAction(Action):
             self._audio_service.play_sound(slide_hit)
 
         if y >= (FIELD_BOTTOM - PUCK_WIDTH):
-            callback.on_next(GAME_OVER)
-            self._audio_service.play_sound(goal)
+            puck.bounce_y()
+            self._audio_service.play_sound(slide_hit)
 
             
