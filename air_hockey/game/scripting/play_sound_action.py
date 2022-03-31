@@ -2,6 +2,9 @@ from constants import *
 from game.scripting.action import Action
 from game.casting.sound import Sound
 
+"""
+    The sound that will be played at the beginning of the game
+"""
 
 class PlaySoundAction(Action):
 
