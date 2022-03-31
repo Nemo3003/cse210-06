@@ -1,6 +1,9 @@
 from constants import *
 from game.scripting.action import Action
 
+"""
+    We need this to make the surface something real
+"""
 
 class DrawSurface(Action):
 
