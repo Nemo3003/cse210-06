@@ -1,5 +1,3 @@
-#from game.scripting.collide_borders_action import CollideBordersAction
-
 class Action:
     """A thing that is done.
     
@@ -17,6 +15,3 @@ class Action:
             callback: An instance of ActionCallback so we can change the scene.
         """
         raise NotImplementedError("execute not implemented in base class")
-        collision = CollideBordersAction
-        collision.execute(cast)
-        callback.on_next(GAME_OVER)
