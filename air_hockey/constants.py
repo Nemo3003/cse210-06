@@ -6,7 +6,7 @@ from game.casting.color import Color
 # -------------------------------------------------------------------------------------------------- 
 
 # GAME
-GAME_NAME = "Air Hockey - Group 8"
+GAME_NAME = "Air Hockey Game - Group 8"
 FRAME_RATE = 60
 
 # SCREEN
