@@ -2,7 +2,9 @@ import time
 from constants import *
 from game.casting.image import Image
 
-
+"""
+This bad boy controls the animations, you need to modify the delay, images, rate, frames? you are in the right place
+"""
 class Animation:
     """An animation."""
     
