@@ -42,8 +42,8 @@ class Striker(Actor):
         """Steers the bat to the right."""
         velocity = Point(STRIKER_VELOCITY, 0)
         self._body.set_velocity(velocity)
-        
-        def swing_up(self):
+
+    def swing_up(self):
         """Steers the bat to the right."""
         velocity = Point(0, -STRIKER_VELOCITY)
         self._body.set_velocity(velocity)
@@ -72,7 +72,6 @@ class Striker(Actor):
         """Steers the bat to the right."""
         velocity = Point(-STRIKER_VELOCITY/2, STRIKER_VELOCITY/2)
         self._body.set_velocity(velocity)
-
     
     def stop_moving(self):
         """Stops the bat from moving."""
