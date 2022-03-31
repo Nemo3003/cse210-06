@@ -1,6 +1,9 @@
 from pathlib import Path
 from game.scripting.action import Action
 
+"""
+    This module loads the assets (so, the sounds, musics, fonts, etc)
+"""
 
 class LoadAssetsAction(Action):
 
