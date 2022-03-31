@@ -1,6 +1,8 @@
 from constants import *
 from game.casting.actor import Actor
-
+"""
+    Do we need the score? well, this module has all you need (or at least part of it :))
+"""
 
 class Stats(Actor):
     """The game stats."""
