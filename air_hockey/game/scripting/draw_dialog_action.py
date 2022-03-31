@@ -1,6 +1,9 @@
 from constants import *
 from game.scripting.action import Action
 
+"""
+    Here we manage some more of the text displayed in the screen
+"""
 
 class DrawDialogAction(Action):
 
