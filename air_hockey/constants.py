@@ -1,6 +1,10 @@
 import pathlib
 from game.casting.color import Color
 
+"""
+CONSTANTS: used to declare constants that will be used in the game
+"""
+
 # -------------------------------------------------------------------------------------------------- 
 # GENERAL GAME CONSTANTS
 # -------------------------------------------------------------------------------------------------- 
