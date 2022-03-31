@@ -1,7 +1,9 @@
 from constants import *
 from game.casting.sound import Sound
 from game.scripting.action import Action
-
+"""
+This module handles the events in which the puck hits the borders
+"""
 
 class CollideBordersAction(Action):
 
@@ -17,6 +19,7 @@ class CollideBordersAction(Action):
         y = position.get_y()
         slide_hit = Sound(SLIDE_HIT)
         goal = Sound(GOAL)
+
 
 #         1. Find the set of coordinates for the goals (a range of points)
 # a.(For left goal) if x < right bound of goalA AND y is between the range of the goal
@@ -42,20 +45,30 @@ class CollideBordersAction(Action):
                     callback.on_next(GAME_OVER)
                     callback.on_next(NEW_GAME)
                 
+
+
         if x < FIELD_LEFT:
             puck.bounce_x()
             self._audio_service.play_sound(slide_hit)
 
-        elif x >= (FIELD_RIGHT - PUCK_WIDTH):
+        if x >= (FIELD_RIGHT - PUCK_WIDTH):
             puck.bounce_x()
             self._audio_service.play_sound(slide_hit)
 
-        if y < FIELD_TOP:
+        if y < (FIELD_TOP):
             puck.bounce_y()
             self._audio_service.play_sound(slide_hit)
+
+        if y >= (FIELD_BOTTOM - PUCK_WIDTH):
+            puck.bounce_y()
+            self._audio_service.play_sound(slide_hit)
+
 
         elif y >= (FIELD_BOTTOM - (PUCK_WIDTH/2)):
             puck.bounce_y()
             self._audio_service.play_sound(slide_hit)   
 
 # update check
+
+            
+

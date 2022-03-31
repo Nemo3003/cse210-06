@@ -2,6 +2,9 @@ from constants import *
 from game.casting.actor import Actor
 from game.casting.point import Point
 
+"""
+    Now let's modify the striker's movement. Also the images and let us get the body
+"""
 
 class Striker(Actor):
     """A implement used to hit and bounce the puck in the game."""
@@ -41,6 +44,36 @@ class Striker(Actor):
     def swing_right(self):
         """Steers the bat to the right."""
         velocity = Point(STRIKER_VELOCITY, 0)
+        self._body.set_velocity(velocity)
+
+    def swing_up(self):
+        """Steers the bat to the right."""
+        velocity = Point(0, -STRIKER_VELOCITY)
+        self._body.set_velocity(velocity)
+
+    def swing_down(self):
+        """Steers the bat to the right."""
+        velocity = Point(0, STRIKER_VELOCITY)
+        self._body.set_velocity(velocity)
+
+    def swing_upright(self):
+        """Steers the bat to the right."""
+        velocity = Point(STRIKER_VELOCITY/2, -STRIKER_VELOCITY/2)
+        self._body.set_velocity(velocity)
+
+    def swing_upleft(self):
+        """Steers the bat to the right."""
+        velocity = Point(-STRIKER_VELOCITY/2, -STRIKER_VELOCITY/2)
+        self._body.set_velocity(velocity)
+
+    def swing_downright(self):
+        """Steers the bat to the right."""
+        velocity = Point(STRIKER_VELOCITY/2, STRIKER_VELOCITY/2)
+        self._body.set_velocity(velocity)
+
+    def swing_downleft(self):
+        """Steers the bat to the right."""
+        velocity = Point(-STRIKER_VELOCITY/2, STRIKER_VELOCITY/2)
         self._body.set_velocity(velocity)
     
     def stop_moving(self):

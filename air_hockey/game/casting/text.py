@@ -1,5 +1,8 @@
 from constants import * 
 
+"""
+    This only handles the message shown in the game :)
+"""
 
 class Text:
     """A text message."""

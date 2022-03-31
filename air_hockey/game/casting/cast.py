@@ -1,3 +1,8 @@
+
+"""
+    Here we can change some stuffs about the actor, like its group. We can get/delete all actors
+"""
+
 class Cast:
     """A collection of actors."""
 

@@ -1,5 +1,7 @@
 from game.casting.point import Point
-
+"""
+    Do you want to modify the field? if so, you are in the right place!
+"""
 
 class Rectangle:
     """A 4-sided flat shape with straight sides."""

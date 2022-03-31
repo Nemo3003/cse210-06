@@ -1,6 +1,9 @@
 from game.casting.point import Point
 from game.casting.rectangle import Rectangle
-
+"""
+    This module is useful to manipulate the body of your actor
+    Things you can modify here are: the body's position, its size, and velocity
+"""
 
 class Body:
     """A rigid body used for physics operations."""

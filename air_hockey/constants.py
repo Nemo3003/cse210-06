@@ -1,12 +1,16 @@
 import pathlib
 from game.casting.color import Color
 
+"""
+CONSTANTS: used to declare constants that will be used in the game
+"""
+
 # -------------------------------------------------------------------------------------------------- 
 # GENERAL GAME CONSTANTS
 # -------------------------------------------------------------------------------------------------- 
 
 # GAME
-GAME_NAME = "Air Hockey"
+GAME_NAME = "Air Hockey Game - Group 8"
 FRAME_RATE = 60
 
 # SCREEN
@@ -16,10 +20,10 @@ CENTER_X = SCREEN_WIDTH / 2
 CENTER_Y = SCREEN_HEIGHT / 2
 
 # FIELD
-FIELD_TOP = 60
-FIELD_BOTTOM = SCREEN_HEIGHT
-FIELD_LEFT = 0
-FIELD_RIGHT = SCREEN_WIDTH
+FIELD_TOP = 60 + 45
+FIELD_BOTTOM = SCREEN_HEIGHT - 40
+FIELD_LEFT = 55
+FIELD_RIGHT = SCREEN_WIDTH - 55
 
 
 GOAL_GROUP = "goals"
@@ -56,8 +60,16 @@ WHITE = Color(255, 255, 255)
 PURPLE = Color(255, 0, 255)
 
 # KEYS
+A = "a"
+S = "s"
+D = "d"
+W = "w"
+
 LEFT = "left"
 RIGHT = "right"
+UP = "up"
+DOWN = "down"
+
 SPACE = "space"
 ENTER = "enter"
 PAUSE = "p"
@@ -108,13 +120,15 @@ PUCK_WIDTH = 50
 PUCK_HEIGHT = 50
 PUCK_VELOCITY = 6
 
-# STRIKER
-STRIKER_GROUP = "strikers"
+# STRIKERS
+STRIKER_GROUP = "striker"
+STRIKER_GROUP2 = "striker2"
 STRIKER_IMAGES = "air_hockey/assets/images/striker.png"
 STRIKER_WIDTH = 100
 STRIKER_HEIGHT = 99
 STRIKER_RATE = 6
-STRIKER_VELOCITY = 7
+STRIKER_VELOCITY = 8
+
 
 # DIALOG
 DIALOG_GROUP = "dialogs"
