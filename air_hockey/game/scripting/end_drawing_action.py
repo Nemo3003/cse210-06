@@ -1,5 +1,8 @@
 from game.scripting.action import Action
 
+"""
+    Something must happen at the end of the game :)
+"""
 
 class EndDrawingAction(Action):
 
