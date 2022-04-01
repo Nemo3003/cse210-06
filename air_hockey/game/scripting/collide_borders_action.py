@@ -58,13 +58,12 @@ class CollideBordersAction(Action):
         if y < (FIELD_TOP):
             puck.bounce_y()
             self._audio_service.play_sound(slide_hit)
-
-        if y >= (FIELD_BOTTOM - PUCK_WIDTH):
+            
+        if y < (FIELD_TOP):
             puck.bounce_y()
             self._audio_service.play_sound(slide_hit)
 
-
-        elif y >= (FIELD_BOTTOM - (PUCK_WIDTH/2)):
+        if y >= (FIELD_BOTTOM - 25):
             puck.bounce_y()
             self._audio_service.play_sound(slide_hit)   
 
