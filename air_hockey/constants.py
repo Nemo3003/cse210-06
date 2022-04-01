@@ -124,6 +124,7 @@ PUCK_VELOCITY = 6
 STRIKER_GROUP = "striker"
 STRIKER_GROUP2 = "striker2"
 STRIKER_IMAGES = "air_hockey/assets/images/striker.png"
+STRIKER2_IMAGES = "air_hockey/assets/images/striker2.png"
 STRIKER_WIDTH = 100
 STRIKER_HEIGHT = 99
 STRIKER_RATE = 6
