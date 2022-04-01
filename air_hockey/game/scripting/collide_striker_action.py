@@ -19,7 +19,7 @@ class CollideStrikerAction(Action):
         striker_body = striker.get_body()
 
         if self._physics_service.has_collided(puck_body, striker_body):
-            puck.bounce_y()
+            puck.bounce_x()
             sound = Sound(SLIDE_HIT)
             self._audio_service.play_sound(sound)    
 
@@ -38,7 +38,7 @@ class CollideStrikerAction2(Action):
         striker_body = striker.get_body()
 
         if self._physics_service.has_collided(puck_body, striker_body):
-            puck.bounce_y()
+            puck.bounce_x()
             sound = Sound(SLIDE_HIT)
             self._audio_service.play_sound(sound)     
 
