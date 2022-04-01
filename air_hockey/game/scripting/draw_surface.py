@@ -9,7 +9,7 @@ class DrawSurface(Action):
 
     def __init__(self, video_service):
         self._video_service = video_service
-        
+        #Puts the actor in position :)
     def execute(self, cast, script, callback):
         surface = cast.get_first_actor(SURFACE_GROUP)
         body = surface.get_body()
