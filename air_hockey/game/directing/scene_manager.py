@@ -233,7 +233,7 @@ class SceneManager:
         size = Point(STRIKER_WIDTH, STRIKER_HEIGHT)
         velocity = Point(0, 0)
         body = Body(position, size, velocity)
-        image = Image(STRIKER_IMAGES)
+        image = Image(STRIKER2_IMAGES)
         striker2 = Striker(body, image, True)
         cast.add_actor(STRIKER_GROUP2, striker2)
 
