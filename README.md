@@ -17,3 +17,11 @@ A 2 player Air Hockey game. It has score updation and basic air hockey features.
 ## Organization
 - To access the game go to:
    - air_hockey -> Main 
+
+Please notice that the game is under a license.
+
+## Members of the Team
+- Ken Kyle
+- Cai (K) Woods
+- Daniel Allred
+- Ulises Mariano Melgarejo
